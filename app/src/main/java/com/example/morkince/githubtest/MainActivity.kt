@@ -19,6 +19,16 @@ class MainActivity : AppCompatActivity() {
             alertDialog.setPositiveButton("OK") { dialog, which -> dialog.dismiss() }
 
             alertDialog.show()
+            //comment
+        }
+
+        btn_mainGoodbye.setOnClickListener {
+            var alertDialog = AlertDialog.Builder(this)
+            alertDialog.setCancelable(false)
+            alertDialog.setMessage("So long, farewell")
+            alertDialog.setNegativeButton("NOOO") { dialog, which -> dialog.dismiss() }
+
+            alertDialog.show()
         }
     }
 }
