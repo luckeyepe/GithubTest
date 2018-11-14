@@ -50,7 +50,11 @@ class MainActivity : AppCompatActivity() {
     fun mikayFunction(){
         Log.d("Mkay", "MikayL Logs")
     }
+    fun mama(){
+        Log.d("Mickey", "Marc Logs")
+    }
     fun marcFunction(){
         Log.d("Mickey", "Marc Logs")
     }
+
 }
