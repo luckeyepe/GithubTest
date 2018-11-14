@@ -3,6 +3,7 @@ package com.example.morkince.githubtest
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -37,5 +38,6 @@ class MainActivity : AppCompatActivity() {
 
     fun makeChange(){
         //test merging
+        Log.d("Test", "Hello there")
     }
 }
