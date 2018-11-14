@@ -39,5 +39,6 @@ class MainActivity : AppCompatActivity() {
     fun makeChange(){
         //test merging
         Log.d("Test", "Hello there")
+        //new test for github
     }
 }
