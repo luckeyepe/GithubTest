@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
     fun makeChange(){
         //test merging
         Log.d("Test", "Hello there")
+        //new test for github
+    }
+
+    fun mickeyFunction(){
+        Log.d("Mickey", "Mickey Logs")
     }
     fun titusFunction() {
         Log.d("Japhet", "TitusAbanto Log")
