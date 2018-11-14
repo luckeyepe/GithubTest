@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".Titus_Activity">
         </activity>
+        <activity android:name=".MikayActivity">
+        </activity>
     </application>
 
 </manifest>
