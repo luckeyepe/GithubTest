@@ -39,4 +39,7 @@ class MainActivity : AppCompatActivity() {
         //test merging
         Log.d("Test", "Hello there")
     }
+    fun titusFunction() {
+        Log.d("Japhet", "TitusAbanto")
+    }
 }
