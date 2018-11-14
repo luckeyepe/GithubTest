@@ -40,6 +40,6 @@ class MainActivity : AppCompatActivity() {
         Log.d("Test", "Hello there")
     }
     fun titusFunction() {
-        Log.d("Japhet", "TitusAbanto")
+        Log.d("Japhet", "TitusAbanto Log")
     }
 }
