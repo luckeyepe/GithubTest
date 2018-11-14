@@ -3,6 +3,7 @@ package com.example.morkince.githubtest
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +29,16 @@ class MainActivity : AppCompatActivity() {
             alertDialog.setNegativeButton("NOOO") { dialog, which -> dialog.dismiss() }
 
             alertDialog.show()
-            //group commit
+            //commit
+            //commit testeing
+
+            //this is used to test the merging of code
         }
+    }
+
+    fun makeChange(){
+        //test merging
+        Log.d("Test", "Hello there")
+        //new test for github
     }
 }
