@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".MyActivityAbanto">
         </activity>
+        <activity android:name=".mikayactivity2">
+        </activity>
     </application>
 
 </manifest>
