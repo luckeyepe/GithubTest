@@ -37,4 +37,8 @@ class MainActivity : AppCompatActivity() {
         //test merging
         Log.d("Test", "Hello there")
     }
+
+    fun marcFunction(){
+        Log.d("Mickey", "Marc Logs")
+    }
 }
