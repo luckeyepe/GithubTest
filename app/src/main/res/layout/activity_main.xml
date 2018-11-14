@@ -8,18 +8,34 @@
         tools:context=".MainActivity">
 
     <Button
-            android:text="SAY HELLO"
+            android:text="SAY HELLO Mickey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_mainHello" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:id="@+id/btn_mainMickey" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="72dp" app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginTop="72dp" app:layout_constraintTop_toTopOf="parent" android:textAllCaps="true"/>
     <Button
-            android:text="SAY goodbye"
+            android:text="SAY HELLO Marc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_mainGoodbye" android:layout_marginTop="52dp"
-            app:layout_constraintTop_toBottomOf="@+id/btn_mainHello" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/btn_mainMarc" android:layout_marginTop="36dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_mainMickey" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.502"/>
+    <Button
+            android:text="SAY HELLO Mikay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_mainMikay" android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_mainMarc" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <Button
+            android:text="SAY HELLO Titus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_mainTitus" android:layout_marginTop="44dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_mainMikay" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"/>
 

@@ -1,5 +1,6 @@
 package com.example.morkince.githubtest
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -12,26 +13,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn_mainHello.setOnClickListener {
-            var alertDialog = AlertDialog.Builder(this)
-            alertDialog.setCancelable(false)
-            alertDialog.setMessage("Hello World")
-            alertDialog.setPositiveButton("OK") { dialog, which -> dialog.dismiss() }
-
-            alertDialog.show()
-            //comment
+        btn_mainMickey.setOnClickListener {
+            startActivity(Intent(this, MickeyActivity::class.java))
         }
 
-        btn_mainGoodbye.setOnClickListener {
-            var alertDialog = AlertDialog.Builder(this)
-            alertDialog.setCancelable(false)
-            alertDialog.setMessage("So long, farewell")
-            alertDialog.setNegativeButton("NOOO") { dialog, which -> dialog.dismiss() }
+        btn_mainMarc.setOnClickListener {
+            startActivity(Intent(this, MarcActivity::class.java))
+        }
 
-            alertDialog.show()
-            //groupcommit
+        btn_mainMikay.setOnClickListener {
+            startActivity(Intent(this, MikayActivity::class.java))
+        }
 
-            //this is used to test the merging of code
+        btn_mainTitus.setOnClickListener {
+            startActivity(Intent(this, Titus_Activity::class.java))
         }
     }
 
