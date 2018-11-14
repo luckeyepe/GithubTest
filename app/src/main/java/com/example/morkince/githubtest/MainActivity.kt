@@ -41,4 +41,8 @@ class MainActivity : AppCompatActivity() {
         Log.d("Test", "Hello there")
         //new test for github
     }
+
+    fun mickeyFunction(){
+        Log.d("Mickey", "Mickey Logs")
+    }
 }
