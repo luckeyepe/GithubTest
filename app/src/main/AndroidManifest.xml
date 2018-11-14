@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".MikayActivity">
         </activity>
+        <activity android:name=".mikayactivity2">
+        </activity>
     </application>
 
 </manifest>
