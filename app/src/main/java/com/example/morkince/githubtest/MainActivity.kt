@@ -30,6 +30,12 @@ class MainActivity : AppCompatActivity() {
             alertDialog.show()
             //commit
             //commit testeing
+
+            //this is used to test the merging of code
         }
+    }
+
+    fun makeChange(){
+        //test merging
     }
 }
