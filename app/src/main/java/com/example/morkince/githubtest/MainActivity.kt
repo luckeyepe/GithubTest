@@ -53,6 +53,4 @@ class MainActivity : AppCompatActivity() {
     fun marcFunction(){
         Log.d("Mickey", "Marc Logs")
     }
-
-
 }
