@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             alertDialog.setNegativeButton("NOOO") { dialog, which -> dialog.dismiss() }
 
             alertDialog.show()
-            //commit
+            //group commit
         }
     }
 }
