@@ -33,8 +33,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun makeChange(){
+    fun makeChange() {
         //test merging
         Log.d("Test", "Hello there")
+    }
+    fun mikayFunction(){
+        Log.d("Mkay", "MikayL Logs")
     }
 }
