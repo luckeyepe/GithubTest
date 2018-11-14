@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".MarcActivity">
         </activity>
+        <activity android:name=".MyActivityAbanto">
+        </activity>
     </application>
 
 </manifest>
