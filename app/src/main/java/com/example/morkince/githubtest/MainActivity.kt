@@ -29,13 +29,18 @@ class MainActivity : AppCompatActivity() {
             alertDialog.setNegativeButton("NOOO") { dialog, which -> dialog.dismiss() }
 
             alertDialog.show()
-            //local mikay
+            //groupcommit
+
+            //this is used to test the merging of code
         }
     }
 
-    fun makeChange() {
+    fun makeChange(){
         //test merging
         Log.d("Test", "Hello there")
+    }
+    fun titusFunction() {
+        Log.d("Japhet", "TitusAbanto Log")
     }
     fun mikayFunction(){
         Log.d("Mkay", "MikayL Logs")
