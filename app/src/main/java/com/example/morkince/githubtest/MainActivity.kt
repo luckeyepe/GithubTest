@@ -29,8 +29,7 @@ class MainActivity : AppCompatActivity() {
             alertDialog.setNegativeButton("NOOO") { dialog, which -> dialog.dismiss() }
 
             alertDialog.show()
-            //commit
-            //commit testeing
+            //groupcommit
 
             //this is used to test the merging of code
         }
