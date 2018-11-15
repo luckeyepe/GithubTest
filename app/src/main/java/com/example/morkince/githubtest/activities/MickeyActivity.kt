@@ -3,7 +3,10 @@ package com.example.morkince.githubtest.activities
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.util.Log
 import com.example.morkince.githubtest.R
+import com.example.morkince.githubtest.models.Student
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_mickey.*
 
 class MickeyActivity : AppCompatActivity() {
@@ -13,12 +16,56 @@ class MickeyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_mickey)
 
         btn_mickeyAdd.setOnClickListener {
-            var alertDialog = AlertDialog.Builder(this)
-            alertDialog.setCancelable(false)
-            alertDialog.setMessage("Hello there my name is Mickey Mouse")
-            alertDialog.setPositiveButton("YEEEAH") { dialog, _ -> dialog.dismiss() }
+            if (isCompleteField()){
+                addStudent()
+            }else{
+                popupError()
+            }
 
-            alertDialog.show()
         }
+    }
+
+    private fun addStudent() {
+        var firestore = FirebaseFirestore.getInstance().collection("Students")
+        var idNumber = edt_mickeyIDNumber.text.toString().trim().toInt()
+        var firstName = edt_mickeyFirstName.text.toString().trim()
+        var middleName = edt_mickeyMiddleName.text.toString().trim()
+        var lastName = edt_mickeyLastName.text.toString().trim()
+        var course = edt_mickeyCourse.text.toString().trim()
+        var yearLevel = edt_mickeyYearLevel.text.toString().trim().toInt()
+
+        var student = Student(firstName, middleName, lastName, course, yearLevel, idNumber)
+
+        firestore.document("Students").set(student)
+            .addOnSuccessListener {
+                Log.d("Success", "Added Student to Firestore")
+                popupSuccess("Student is now enrolled", "OK")
+        }
+            .addOnFailureListener {
+                exception -> Log.e("Error", "Failed to add Student to Firestore")
+        }
+    }
+
+    private fun popupError() {
+        var alertDialog = AlertDialog.Builder(this)
+        alertDialog.setCancelable(false)
+        alertDialog.setMessage("Hello there my name is Mickey Mouse")
+        alertDialog.setPositiveButton("YEEEAH") { dialog, _ -> dialog.dismiss() }
+
+        alertDialog.show()
+    }
+
+    private fun popupSuccess(message: String, positveMessage: String) {
+        var alertDialog = AlertDialog.Builder(this)
+        alertDialog.setCancelable(false)
+        alertDialog.setMessage(message)
+        alertDialog.setPositiveButton(positveMessage) { dialog, _ -> dialog.dismiss() }
+
+        alertDialog.show()
+    }
+
+    private fun isCompleteField(): Boolean{
+        return (!edt_mickeyIDNumber.text.isNullOrEmpty() && !edt_mickeyFirstName.text.isNullOrEmpty() && !edt_mickeyMiddleName.text.isNullOrEmpty()
+                && !edt_mickeyLastName.text.isNullOrEmpty() && !edt_mickeyCourse.text.isNullOrEmpty() && !edt_mickeyYearLevel.text.isNullOrEmpty())
     }
 }
