@@ -1,7 +1,8 @@
-package com.example.morkince.githubtest
+package com.example.morkince.githubtest.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.morkince.githubtest.R
 
 class mikayactivity2 : AppCompatActivity() {
 

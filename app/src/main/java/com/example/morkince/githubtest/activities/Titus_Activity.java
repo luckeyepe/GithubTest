@@ -1,4 +1,4 @@
-package com.example.morkince.githubtest;
+package com.example.morkince.githubtest.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import com.example.morkince.githubtest.R;
 
 public class Titus_Activity extends AppCompatActivity {
 Button alertDialog,cancelActivity,alertTwo;

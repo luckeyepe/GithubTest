@@ -1,9 +1,9 @@
-package com.example.morkince.githubtest
+package com.example.morkince.githubtest.activities
 
-import android.content.DialogInterface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import com.example.morkince.githubtest.R
 import kotlinx.android.synthetic.main.activity_mickey.*
 
 class MickeyActivity : AppCompatActivity() {
