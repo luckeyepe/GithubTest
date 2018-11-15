@@ -12,7 +12,7 @@ class MickeyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mickey)
 
-        btn_mickeyAlert.setOnClickListener {
+        btn_mickeyAdd.setOnClickListener {
             var alertDialog = AlertDialog.Builder(this)
             alertDialog.setCancelable(false)
             alertDialog.setMessage("Hello there my name is Mickey Mouse")
