@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.util.Log
 import com.example.morkince.githubtest.R
-import com.example.morkince.githubtest.models.Student
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_mickey.*
-import com.google.firebase.firestore.FirebaseFirestoreSettings
-
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.*
 
 
 class MickeyActivity : AppCompatActivity() {
@@ -20,21 +18,37 @@ class MickeyActivity : AppCompatActivity() {
 
         btn_mickeyAdd.setOnClickListener {
             if (isCompleteField()){
-                addStudent()
-            }else{
-                popupError()
-            }
+                var idNumber = edt_mickeyIDNumber.text.toString().trim().toInt()
+                val firestore = FirebaseFirestore.getInstance()
+                val settings = FirebaseFirestoreSettings.Builder()
+                    .setTimestampsInSnapshotsEnabled(true)
+                    .build()
+                firestore.firestoreSettings = settings
 
+                val docRef = firestore.collection("Students").document("$idNumber")
+                docRef.get().addOnCompleteListener {
+                    task: Task<DocumentSnapshot> ->
+                    if (task.isSuccessful) {
+                        var document = task.result
+                        if (document!!.exists()) {
+                            popupError("Student is already in the database", "OK")
+                        } else {
+                            addStudent(firestore)
+                        }
+                    }else{
+                        popupError("Error in the database", "OK")
+                        Log.e("Error in Checking", task.exception.toString())
+                    }
+                }
+            }else{
+                popupError("Enter all data fields", "OK")
+            }
         }
     }
 
-    private fun addStudent() {
+
+    private fun addStudent(firestore: FirebaseFirestore) {
         Log.d("Promp", "Adding Student Start")
-        var firestore = FirebaseFirestore.getInstance()
-        val settings = FirebaseFirestoreSettings.Builder()
-            .setTimestampsInSnapshotsEnabled(true)
-            .build()
-        firestore.firestoreSettings = settings
 
         var idNumber = edt_mickeyIDNumber.text.toString().trim().toInt()
         var firstName = edt_mickeyFirstName.text.toString().trim()
@@ -51,8 +65,6 @@ class MickeyActivity : AppCompatActivity() {
         map["course"] = course
         map["yearLevel"] = yearLevel
 
-//        var student = Student(firstName, middleName, lastName, course, yearLevel, idNumber)
-
         firestore.collection("Students").document("$idNumber").set(map)
             .addOnSuccessListener {
                 Log.d("Success", "Added Student to Firestore")
@@ -61,6 +73,15 @@ class MickeyActivity : AppCompatActivity() {
             .addOnFailureListener {
                 exception -> Log.e("Error", "Failed to add Student to Firestore")
         }
+    }
+
+    private fun popupError(message: String, positveMessage: String) {
+        var alertDialog = AlertDialog.Builder(this)
+        alertDialog.setCancelable(false)
+        alertDialog.setMessage(message)
+        alertDialog.setPositiveButton(positveMessage) { dialog, _ -> dialog.dismiss() }
+
+        alertDialog.show()
     }
 
     private fun popupError() {
