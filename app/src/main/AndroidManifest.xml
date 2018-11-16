@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MickeyActivity">
+        <activity android:name=".activities.mickey_branch.MickeyActivity">
         </activity>
         <activity android:name=".activities.Titus_Activity">
         </activity>
@@ -27,6 +27,10 @@
         <activity android:name=".activities.MyActivityAbanto">
         </activity>
         <activity android:name=".activities.mikayactivity2">
+        </activity>
+        <activity android:name=".activities.mickey_branch.MickeySearchActivity">
+        </activity>
+        <activity android:name=".activities.mickey_branch.MickeyDashboardActivity">
         </activity>
     </application>
 

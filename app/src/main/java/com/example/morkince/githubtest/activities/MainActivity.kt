@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.morkince.githubtest.R
+import com.example.morkince.githubtest.activities.mickey_branch.MickeyActivity
+import com.example.morkince.githubtest.activities.mickey_branch.MickeyDashboardActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_mainMickey.setOnClickListener {
-            startActivity(Intent(this, MickeyActivity::class.java))
+            startActivity(Intent(this, MickeyDashboardActivity::class.java))
         }
 
         btn_mainMarc.setOnClickListener {
