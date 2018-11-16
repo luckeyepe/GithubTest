@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".activities.mickey_branch.MickeyDashboardActivity">
         </activity>
+        <activity android:name=".activities.mickey_branch.MickeyUpdateActivity">
+        </activity>
     </application>
 
 </manifest>
