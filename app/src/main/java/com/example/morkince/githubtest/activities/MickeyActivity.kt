@@ -8,6 +8,9 @@ import com.example.morkince.githubtest.R
 import com.example.morkince.githubtest.models.Student
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_mickey.*
+import com.google.firebase.firestore.FirebaseFirestoreSettings
+
+
 
 class MickeyActivity : AppCompatActivity() {
 
@@ -26,7 +29,13 @@ class MickeyActivity : AppCompatActivity() {
     }
 
     private fun addStudent() {
-        var firestore = FirebaseFirestore.getInstance().collection("Students")
+        Log.d("Promp", "Adding Student Start")
+        var firestore = FirebaseFirestore.getInstance()
+        val settings = FirebaseFirestoreSettings.Builder()
+            .setTimestampsInSnapshotsEnabled(true)
+            .build()
+        firestore.firestoreSettings = settings
+
         var idNumber = edt_mickeyIDNumber.text.toString().trim().toInt()
         var firstName = edt_mickeyFirstName.text.toString().trim()
         var middleName = edt_mickeyMiddleName.text.toString().trim()
@@ -34,9 +43,17 @@ class MickeyActivity : AppCompatActivity() {
         var course = edt_mickeyCourse.text.toString().trim()
         var yearLevel = edt_mickeyYearLevel.text.toString().trim().toInt()
 
-        var student = Student(firstName, middleName, lastName, course, yearLevel, idNumber)
+        var map = HashMap<String, Any>()
+        map["idNumber"] = idNumber
+        map["firstName"] = firstName
+        map["middleName"] = middleName
+        map["lastName"] = lastName
+        map["course"] = course
+        map["yearLevel"] = yearLevel
 
-        firestore.document("Students").set(student)
+//        var student = Student(firstName, middleName, lastName, course, yearLevel, idNumber)
+
+        firestore.collection("Students").document("$idNumber").set(map)
             .addOnSuccessListener {
                 Log.d("Success", "Added Student to Firestore")
                 popupSuccess("Student is now enrolled", "OK")

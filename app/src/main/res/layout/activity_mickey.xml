@@ -16,7 +16,7 @@
             app:layout_constraintHorizontal_bias="0.502"
             android:layout_marginTop="48dp" app:layout_constraintTop_toBottomOf="@+id/edt_mickeyYearLevel"/>
     <EditText
-            android:layout_width="275"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/edt_mickeyIDNumber" android:layout_marginTop="16dp"
@@ -25,7 +25,7 @@
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.503"
             android:hint="ID Number" android:inputType="number" android:textAlignment="center"/>
     <EditText
-            android:layout_width="275"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -35,7 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.503"
             android:hint="First Name" android:textAlignment="center"/>
     <EditText
-            android:layout_width="275"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -44,7 +44,7 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:textAlignment="center" android:hint="Middle Name"/>
     <EditText
-            android:layout_width="275"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -53,7 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:textAlignment="center" android:hint="Last Name"/>
     <EditText
-            android:layout_width="275"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -62,12 +62,12 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:hint="Course" android:textAlignment="center"/>
     <EditText
-            android:layout_width="275"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/edt_mickeyYearLevel" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/edt_mickeyCourse" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:textAlignment="center" android:hint="Year Level"/>
+            app:layout_constraintStart_toStartOf="parent" android:textAlignment="center" android:hint="Year Level"
+            android:inputType="number"/>
 </android.support.constraint.ConstraintLayout>
